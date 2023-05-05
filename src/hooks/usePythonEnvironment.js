@@ -6,7 +6,6 @@ import { appStore } from "../stores/AppStore";
 export function usePythonEnvironment() {
   const [pythonEnvironment, setPythonEnvironment] = useState();
   const [loaded, setLoaded] = useState(false);
-  // const business = appStore((state) => state.business);
 
   async function createPythonEnvironment() {
     if (!loaded) {
@@ -15,11 +14,14 @@ export function usePythonEnvironment() {
       const micropip = pyodide.pyimport("micropip");
       await micropip.install("sqlite3");
       await micropip.install("procurement-bytetheory");
-      const test_namespace = { appStore };
-      pyodide.registerJsModule("test_namespace", test_namespace);
+      setRuntimeSharedState();
       setPythonEnvironment(pyodide);
       setLoaded(true);
     }
+  }
+
+  function setRuntimeSharedState() {
+    window.runtimeSharedState = appStore;
   }
 
   createPythonEnvironment();

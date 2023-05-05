@@ -8,9 +8,7 @@ export function useView() {
 }
 
 export function View({ children }) {
-  const nameOfSharedStore = "appStore";
-  const view = getReactViewDefinition(nameOfSharedStore);
-
+  const view = getReactViewDefinition();
   return (
     <>
       <ViewContext.Provider value={view}>{children}</ViewContext.Provider>

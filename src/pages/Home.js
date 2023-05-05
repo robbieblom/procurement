@@ -10,12 +10,12 @@ import { appStore } from "../stores/AppStore";
 export const Home = () => {
   const controller = useController();
   const business = appStore((state) => state.business);
-  console.log("rb", business);
+
   return (
     <>
       <Button
-        onClick={() => {
-          controller.createBusiness("Acme Innovations", 500);
+        onClick={async () => {
+          await controller.createBusiness("Acme Innovations", 500);
         }}
       >
         Test
