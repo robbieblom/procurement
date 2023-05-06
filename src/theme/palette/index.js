@@ -1,11 +1,15 @@
 export const palette = () => {
-    return {
-        primary: {
-            main: '#ba8759',
-            dark: '#8b5521'
-        },
-        secondary: {
-            main: '#FFF'
-        },
-    }
-}
+  return {
+    primary: {
+      main: "#ffc400",
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#1b1b1b",
+      dark: "#000000",
+      contrastText: "#afc2cb",
+    },
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+  };
+};

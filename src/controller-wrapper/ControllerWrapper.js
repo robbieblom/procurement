@@ -42,4 +42,11 @@ export class ControllerWrapper {
         controller.liquidateInventory()
     `);
   }
+
+  async getNetWorth() {
+    const netWorth = await globalThis.pythonEnvironment.runPython(`
+        controller.getNetWorth()
+    `);
+    return netWorth;
+  }
 }

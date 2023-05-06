@@ -1,7 +1,8 @@
 import { create } from "zustand";
+import { mockBusiness1 } from "../mocks/business";
 
 export const appStore = create((set) => ({
-  business: "empty",
+  business: mockBusiness1,
   setBusiness: (b) => {
     set({ business: b });
   },

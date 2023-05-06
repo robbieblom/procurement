@@ -1,0 +1,66 @@
+body {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000; /* secondary.main */
+  color: #fff; /* primary.contrastText */
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: 1200px) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: "#afc2cbv"; /* secondary.contrastText */
+}
+
+/* b,
+strong {
+  font-weight: 700;
+}
+
+i {
+  font-style: italic;
+} */
+
+.underline {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: rgba(175, 194, 203, 0.25);
+  text-decoration-thickness: 0.125rem;
+}
+
+/* hr {
+  border: none;
+  height: 2px;
+  background-color: #333;
+}  */
+
+a {
+  color: "#ffc400"; /* primary.main */
+  transition: color 0.3s ease;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

@@ -1,30 +1,38 @@
-import { Button } from "@mui/material";
 import React from "react";
-import { Business } from "../components/Business";
-import { Inventory } from "../components/Inventory";
-import { Layout } from "../components/Layout";
-import { Market } from "../components/Market";
-import { useController } from "../context/Controller";
+import { Business } from "../components/Business/Business";
+import { Inventory } from "../components/Inventory/Inventory";
+import { Market } from "../components/Market/Market";
+// import { useController } from "../context/Controller";
 import { appStore } from "../stores/AppStore";
+import { GlobalLayout } from "./layout/GlobalLayout";
+import { HomePageLayout } from "./layout/HomePageLayout";
 
 export const Home = () => {
-  const controller = useController();
+  // controller.createBusiness("Acme Innovations", 500);
+  // const controller = useController();
   const business = appStore((state) => state.business);
 
   return (
     <>
-      <Button
-        onClick={async () => {
-          await controller.createBusiness("Acme Innovations", 500);
-        }}
-      >
-        Test
-      </Button>
-      <p>{business}</p>
-      <Layout></Layout>
-      <Business></Business>
-      <Inventory></Inventory>
-      <Market></Market>
+      <GlobalLayout>
+        <HomePageLayout
+          businessSection={
+            <>
+              <Business business={business} />
+            </>
+          }
+          inventorySection={
+            <>
+              <Inventory />
+            </>
+          }
+          marketSection={
+            <>
+              <Market />
+            </>
+          }
+        />
+      </GlobalLayout>
     </>
   );
 };

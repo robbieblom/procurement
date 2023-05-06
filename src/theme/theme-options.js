@@ -1,10 +1,11 @@
-import { palette } from './palette'
+import { palette } from "./palette";
+import { typography } from "./typography";
 
 export const themeOptions = () => {
-    const themeConfig = {
-        palette: palette(),
-    }
+  const themeConfig = {
+    palette: palette(),
+    typography: typography(),
+  };
 
-    return themeConfig
-
-}
+  return themeConfig;
+};
