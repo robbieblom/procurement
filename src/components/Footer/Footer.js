@@ -40,7 +40,7 @@ export const Footer = () => {
   ];
   return (
     <StyledHTMLFooter style={{ marginBottom: 0 }} className="section">
-      <div className="container container__tight">
+      <div className="container container__tight flex-container">
         <StyledDivForFooterMenu className="footer__menu">
           <FooterMenu
             menuTitle="Links"

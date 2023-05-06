@@ -4,7 +4,7 @@ export const StyledHTMLFooter = styled("footer")(
   ({ theme }) =>
     `
   &.section {
-    padding: ${theme.custom.footerGap} ${theme.custom.footerBorder} ${theme.custom.footerGap} 0;
+    padding: ${theme.custom.footerGap} 0 0 0;
 
     .container {
       display: flex;

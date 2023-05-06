@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 
-export const StyledDivForFooterMenu = styled("div")(
-  ({ theme }) => `
+export const StyledDivForFooterMenu = styled("div")(({ theme }) => {
+  const css = `
     @media (min-width: 768px) {
       flex-grow: 1;
       width: 33.333%;
@@ -46,7 +46,6 @@ export const StyledDivForFooterMenu = styled("div")(
 
     &.social__menu {
 
-      margin-bottom: 100px;
       ul {
         display: flex;
 
@@ -55,7 +54,6 @@ export const StyledDivForFooterMenu = styled("div")(
         }
 
         li {
-          font-size: var(--h6);
           margin-right: 8px;
 
           @media (min-width: 768px) {
@@ -76,5 +74,6 @@ export const StyledDivForFooterMenu = styled("div")(
         }
       }
     }
-  `
-);
+  `;
+  return css;
+});

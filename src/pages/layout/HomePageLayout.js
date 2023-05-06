@@ -1,4 +1,3 @@
-import { Box, Stack } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
 
@@ -11,19 +10,26 @@ export const HomePageLayout = ({
     <>
       <Grid2
         container
-        sx={{ height: "100vh", marginTop: "10px" }}
+        sx={{ marginTop: "10px", height: "100%" }}
+        alignItems={"stretch"}
         direction={"row"}
         spacing={2}
       >
-        <Grid2 xs={6}>
-          <Stack sx={{ height: "100%" }} spacing={2}>
-            <Box sx={{ height: "45%" }}>{businessSection}</Box>
-            <Box sx={{ height: "55%" }}>{inventorySection}</Box>
-          </Stack>
+        <Grid2
+          item
+          container
+          xs={12}
+          md={6}
+          direction={"column"}
+          wrap="nowrap"
+          spacing={2}
+        >
+          <Grid2>{businessSection}</Grid2>
+          <Grid2 flexGrow={1}>{inventorySection}</Grid2>
         </Grid2>
 
-        <Grid2 xs={6}>
-          <Box sx={{ height: "100%" }}>{marketSection}</Box>
+        <Grid2 xs={12} md={6}>
+          {marketSection}
         </Grid2>
       </Grid2>
     </>
