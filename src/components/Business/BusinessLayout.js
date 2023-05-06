@@ -10,9 +10,10 @@ export const BusinessLayout = ({
     <Card
       sx={{
         height: "100%",
-        backgroundColor: "secondary.main",
-        color: "primary.contrastText",
+        paddingTop: "16px",
+        paddingBottom: "16px",
       }}
+      elevation={10}
     >
       <Container>
         <Stack spacing={2}>

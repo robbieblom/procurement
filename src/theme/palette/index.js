@@ -1,15 +1,25 @@
 export const palette = () => {
-  return {
+  const darkModePalette = {
+    mode: "dark",
     primary: {
       main: "#ffc400",
       contrastText: "#fff",
     },
-    secondary: {
-      main: "#1b1b1b",
-      dark: "#000000",
-      contrastText: "#afc2cb",
+    text: {
+      secondary: "#afc2cb",
     },
-    contrastThreshold: 3,
-    tonalOffset: 0.2,
+    background: {
+      default: "#1b1b1b",
+      paper: "#1b1b1b",
+    },
   };
+
+  const lightModePalette = {
+    mode: "light",
+    primary: {
+      main: "#ffc400",
+      contrastText: "#fff",
+    },
+  };
+  return darkModePalette;
 };

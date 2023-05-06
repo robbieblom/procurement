@@ -12,31 +12,35 @@ export const BusinessDetail = ({
 }) => {
   return (
     <>
-      <Grid2 container>
+      <Grid2 container spacing={1}>
         <Grid2 xs={4}>
-          <Typography>${volumeSold}</Typography>
+          <Typography variant="h6">${volumeSold}</Typography>
+          <Typography color={"text.secondary"}>Volume Sold</Typography>
         </Grid2>
 
         <Grid2 xs={4}>
-          <div>${numberSold}</div>
-          <Typography>Margin</Typography>
+          <Typography variant="h6">${numberSold}</Typography>
+          <Typography color={"text.secondary"}>Units Sold</Typography>
         </Grid2>
 
         <Grid2 xs={4}>
-          <div>${avgSalePrice}</div>
+          <Typography variant="h6">${Math.round(avgSalePrice)}</Typography>
+          <Typography color={"text.secondary"}>Avg. Sale Price</Typography>
         </Grid2>
 
         <Grid2 xs={4}>
-          <Typography>${volumePurchased}</Typography>
+          <Typography variant="h6">${volumePurchased}</Typography>
+          <Typography color={"text.secondary"}>Volume Purchased</Typography>
         </Grid2>
 
         <Grid2 xs={4}>
-          <div>${numberPurchased}</div>
-          <Typography>Margin</Typography>
+          <Typography variant="h6">${numberPurchased}</Typography>
+          <Typography color={"text.secondary"}>Units Purchased</Typography>
         </Grid2>
 
         <Grid2 xs={4}>
-          <div>${avgPurchasePrice}</div>
+          <Typography variant="h6">${Math.round(avgPurchasePrice)}</Typography>
+          <Typography color={"text.secondary"}>Avg. Purchase Price</Typography>
         </Grid2>
       </Grid2>
     </>

@@ -17,8 +17,8 @@ export const HomePageLayout = ({
       >
         <Grid2 xs={6}>
           <Stack sx={{ height: "100%" }} spacing={2}>
-            <Box sx={{ height: "40%" }}>{businessSection}</Box>
-            <Box sx={{ height: "60%" }}>{inventorySection}</Box>
+            <Box sx={{ height: "45%" }}>{businessSection}</Box>
+            <Box sx={{ height: "55%" }}>{inventorySection}</Box>
           </Stack>
         </Grid2>
 

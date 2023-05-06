@@ -4,7 +4,6 @@ import { Inventory } from "../components/Inventory/Inventory";
 import { Market } from "../components/Market/Market";
 // import { useController } from "../context/Controller";
 import { appStore } from "../stores/AppStore";
-import { GlobalLayout } from "./layout/GlobalLayout";
 import { HomePageLayout } from "./layout/HomePageLayout";
 
 export const Home = () => {
@@ -14,25 +13,23 @@ export const Home = () => {
 
   return (
     <>
-      <GlobalLayout>
-        <HomePageLayout
-          businessSection={
-            <>
-              <Business business={business} />
-            </>
-          }
-          inventorySection={
-            <>
-              <Inventory />
-            </>
-          }
-          marketSection={
-            <>
-              <Market />
-            </>
-          }
-        />
-      </GlobalLayout>
+      <HomePageLayout
+        businessSection={
+          <>
+            <Business business={business} />
+          </>
+        }
+        inventorySection={
+          <>
+            <Inventory />
+          </>
+        }
+        marketSection={
+          <>
+            <Market />
+          </>
+        }
+      />
     </>
   );
 };

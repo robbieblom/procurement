@@ -4,15 +4,18 @@ import React from "react";
 
 export const BusinessSubheader = ({ moneyAmount, margin }) => {
   return (
-    <Grid2 container>
-      <Grid2 xs={6}>
-        <Typography>${moneyAmount}</Typography>
-      </Grid2>
+    <>
+      <Grid2 container>
+        <Grid2 xs={4}>
+          <Typography variant="h6">${moneyAmount}</Typography>
+          <Typography color={"primary"}>Cash Available</Typography>
+        </Grid2>
 
-      <Grid2 xs={6}>
-        <div>${margin}</div>
-        <Typography>Margin</Typography>
+        <Grid2 xs={8}>
+          <Typography variant="h6">${Math.round(margin)}</Typography>
+          <Typography color={"primary"}>Margin</Typography>
+        </Grid2>
       </Grid2>
-    </Grid2>
+    </>
   );
 };

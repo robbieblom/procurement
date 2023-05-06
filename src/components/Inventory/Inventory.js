@@ -6,8 +6,8 @@ export const Inventory = () => {
     <Card
       sx={{
         height: "100%",
-        backgroundColor: "secondary.main",
-        color: "primary.contrastText",
+        // backgroundColor: "secondary.main",
+        // color: "primary.contrastText",
       }}
     >
       <Container>

@@ -1,13 +1,16 @@
-body {
-  font-family: "Heebo", sans-serif;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #000000; /* secondary.main */
-  color: #fff; /* primary.contrastText */
-  overflow-x: hidden;
+/* used so that I can see colors */
+.primary {
+  main: #ffc400;
+  contrasttext: #fff;
 }
 
+.secondary {
+  main: #1b1b1b;
+  dark: #000000;
+  contrasttext: #afc2cb;
+}
+
+/* Below is to do later */
 h1,
 h2 {
   margin-top: 0.5rem;
@@ -29,17 +32,7 @@ h6 {
 p {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  color: "#afc2cbv"; /* secondary.contrastText */
 }
-
-/* b,
-strong {
-  font-weight: 700;
-}
-
-i {
-  font-style: italic;
-} */
 
 .underline {
   text-decoration: underline;
@@ -47,12 +40,6 @@ i {
   text-decoration-color: rgba(175, 194, 203, 0.25);
   text-decoration-thickness: 0.125rem;
 }
-
-/* hr {
-  border: none;
-  height: 2px;
-  background-color: #333;
-}  */
 
 a {
   color: "#ffc400"; /* primary.main */
