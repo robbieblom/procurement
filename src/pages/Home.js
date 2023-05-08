@@ -1,10 +1,10 @@
 import React from "react";
-import { Business } from "../components/Business/Business";
+import { BusinessTile } from "../components/Business/BusinessTile";
 import { Inventory } from "../components/Inventory/Inventory";
 import { Market } from "../components/Market/Market";
 // import { useController } from "../context/Controller";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { appStore } from "../stores/AppStore";
-import { HomePageLayout } from "./layout/HomePageLayout";
 
 export const Home = () => {
   // controller.createBusiness("Acme Innovations", 500);
@@ -13,23 +13,34 @@ export const Home = () => {
 
   return (
     <>
-      <HomePageLayout
-        businessSection={
-          <>
-            <Business business={business} />
-          </>
-        }
-        inventorySection={
-          <>
+      <Grid2
+        container
+        sx={{ marginTop: "10px", height: "100%" }}
+        alignItems={"stretch"}
+        direction={"row"}
+        spacing={2}
+      >
+        <Grid2
+          item
+          container
+          xs={12}
+          md={6}
+          direction={"column"}
+          wrap="nowrap"
+          spacing={2}
+        >
+          <Grid2>
+            <BusinessTile business={business} />
+          </Grid2>
+          <Grid2 flexGrow={1}>
             <Inventory />
-          </>
-        }
-        marketSection={
-          <>
-            <Market />
-          </>
-        }
-      />
+          </Grid2>
+        </Grid2>
+
+        <Grid2 xs={12} md={6}>
+          <Market />
+        </Grid2>
+      </Grid2>
     </>
   );
 };

@@ -1,11 +1,7 @@
 import { Card, Container, Stack } from "@mui/material";
 import React from "react";
 
-export const BusinessLayout = ({
-  businessHeader,
-  businessSubheader,
-  businessDetail,
-}) => {
+export const Tile = ({ header, subheader, detail }) => {
   return (
     <Card
       sx={{
@@ -17,9 +13,9 @@ export const BusinessLayout = ({
     >
       <Container>
         <Stack spacing={2}>
-          {businessHeader}
-          {businessSubheader}
-          {businessDetail}
+          {header}
+          {subheader}
+          {detail}
         </Stack>
       </Container>
     </Card>

@@ -1,10 +1,10 @@
 import React from "react";
+import { Tile } from "../common/Tile";
 import { BusinessDetail } from "./BusinessDetail";
 import { BusinessHeader } from "./BusinessHeader";
-import { BusinessLayout } from "./BusinessLayout";
 import { BusinessSubheader } from "./BusinessSubheader";
 
-export const Business = ({ business }) => {
+export const BusinessTile = ({ business }) => {
   // const controller = useController();
   // const netWorth = controller.getNetWorth();
   const netWorth = 500;
@@ -29,14 +29,14 @@ export const Business = ({ business }) => {
   const avgPurchasePrice = volumePurchased / numberPurchased;
 
   return (
-    <BusinessLayout
-      businessHeader={
+    <Tile
+      header={
         <BusinessHeader businessName={business.name} netWorth={netWorth} />
       }
-      businessSubheader={
+      subheader={
         <BusinessSubheader moneyAmount={business.moneyAmount} margin={margin} />
       }
-      businessDetail={
+      detail={
         <BusinessDetail
           volumeSold={volumeSold}
           numberSold={numberSold}
