@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ControllerWrapper } from "../controller-wrapper/ControllerWrapper";
 import { usePythonEnvironment } from "../hooks/usePythonEnvironment";
+import { LoadingFallback } from "./LoadingFallback";
 import { useView } from "./View";
 
 const ControllerContext = React.createContext();
@@ -24,7 +25,7 @@ export function Controller({ children }) {
   return (
     <>
       <ControllerContext.Provider value={controller}>
-        {children}
+        <LoadingFallback>{children}</LoadingFallback>
       </ControllerContext.Provider>
     </>
   );

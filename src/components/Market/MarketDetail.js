@@ -37,22 +37,17 @@ export const MarketDetail = ({ items }) => {
     resizable: true,
   }));
 
-  const autoSizeAll = useCallback((skipHeader) => {
+  const sizeColumns = useCallback((skipHeader) => {
     const allColumnIds = [];
     gridRef.current.columnApi.getColumns().forEach((column) => {
-      //   console.log(column, column.getId());
       allColumnIds.push(column.getId());
     });
     gridRef.current.columnApi.autoSizeColumns(allColumnIds, skipHeader);
-  }, []);
-
-  const sizeToFit = useCallback(() => {
     gridRef.current.api.sizeColumnsToFit();
   }, []);
 
   const onGridReady = useCallback(() => {
-    // autoSizeAll();
-    sizeToFit();
+    sizeColumns();
   });
 
   return (
