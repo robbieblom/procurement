@@ -19,11 +19,6 @@ export const GlobalLayout = ({ children }) => {
               position: "sticky",
               top: "0",
               zIndex: "100",
-              // position: "fixed",
-              // top: "0",
-              // left: "0",
-              // width: "100%",
-              // zIndex: "1",
             }}
           >
             <NavModule />
