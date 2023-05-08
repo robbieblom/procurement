@@ -21,7 +21,6 @@ export const Home = () => {
         spacing={2}
       >
         <Grid2
-          item
           container
           xs={12}
           md={6}
