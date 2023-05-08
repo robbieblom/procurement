@@ -11,8 +11,8 @@ export const Tile = ({ header, subheader, detail }) => {
       }}
       elevation={10}
     >
-      <Container>
-        <Stack spacing={2}>
+      <Container sx={{ height: "100%" }}>
+        <Stack spacing={2} sx={{ height: "100%" }}>
           {header}
           {subheader}
           {detail}

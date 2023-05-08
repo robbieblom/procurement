@@ -11,6 +11,19 @@ export const themeOptions = () => {
       navBorderSpacing: "60px",
       navMenuWidth: "100vw",
     },
+    components: {
+      MuiButton: {
+        variants: [
+          {
+            props: { size: "extraSmall" },
+            style: {
+              fontSize: "9px",
+              padding: "1.5px 1.5px",
+            },
+          },
+        ],
+      },
+    },
   };
 
   return themeConfig;

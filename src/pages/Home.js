@@ -1,7 +1,7 @@
 import React from "react";
 import { BusinessTile } from "../components/Business/BusinessTile";
-import { Inventory } from "../components/Inventory/Inventory";
-import { Market } from "../components/Market/Market";
+import { InventoryTile } from "../components/Inventory/InventoryTile";
+import { MarketTile } from "../components/Market/MarketTile";
 // import { useController } from "../context/Controller";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { appStore } from "../stores/AppStore";
@@ -33,12 +33,12 @@ export const Home = () => {
             <BusinessTile business={business} />
           </Grid2>
           <Grid2 flexGrow={1}>
-            <Inventory />
+            <InventoryTile inventory={business.inventory} />
           </Grid2>
         </Grid2>
 
         <Grid2 xs={12} md={6}>
-          <Market />
+          <MarketTile market={business.market} />
         </Grid2>
       </Grid2>
     </>
