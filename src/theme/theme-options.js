@@ -8,6 +8,8 @@ export const themeOptions = () => {
     custom: {
       footerBorder: "60px",
       footerGap: "40px",
+      navBorderSpacing: "60px",
+      navMenuWidth: "100vw",
     },
   };
 

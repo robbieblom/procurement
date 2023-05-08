@@ -6,7 +6,7 @@ export const barOneVariants = {
   closed: {
     y: [10, 10, 0, 0, 0],
   },
-}
+};
 
 export const barTwoVariants = {
   open: {
@@ -15,7 +15,7 @@ export const barTwoVariants = {
   closed: {
     opacity: 1,
   },
-}
+};
 
 export const barThreeVariants = {
   open: {
@@ -25,16 +25,16 @@ export const barThreeVariants = {
   closed: {
     y: [-10, -10, 0, 0, 0],
   },
-}
+};
 
 export const menuList = {
   open: {
     x: 0,
   },
   closed: {
-    x: "calc(var(--menuWidth) * -1)",
+    x: "calc(100vw * -1)",
   },
-}
+};
 
 export const subMenuNavVariants = {
   open: {
@@ -45,4 +45,4 @@ export const subMenuNavVariants = {
     opacity: 0,
     height: 0,
   },
-}
+};
