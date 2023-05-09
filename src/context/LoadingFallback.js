@@ -15,6 +15,7 @@ export const loading = (
     >
       <Stack direction="column" spacing={9}>
         <CircularProgress
+          disableShrink
           color="primary"
           size={150}
           sx={{ alignSelf: "center" }}
