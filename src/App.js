@@ -11,20 +11,21 @@ import { themeOptions } from "./theme/theme-options";
 
 export const App = () => {
   const theme = createTheme(themeOptions());
-  console.log(theme);
 
   return (
-    <ErrorBoundary fallback={<Error />}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <View>
-          <Controller>
-            <GlobalLayout>
-              <Home />
-            </GlobalLayout>
-          </Controller>
-        </View>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <>
+      <ErrorBoundary fallback={<Error />}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <View>
+            <Controller>
+              <GlobalLayout>
+                <Home />
+              </GlobalLayout>
+            </Controller>
+          </View>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </>
   );
 };

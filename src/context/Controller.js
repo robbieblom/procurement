@@ -15,14 +15,19 @@ export function Controller({ children }) {
   const [controller, setController] = useState(null);
   const view = useView();
 
-  const setRuntimeSharedState = () => {
-    window.runtimeSharedState = appStore;
-  };
-
   const createController = (pythonEnvironment) => {
     const initializedController = new ControllerWrapper(pythonEnvironment);
     initializedController.setView(view);
     setController(initializedController);
+  };
+
+  const setRuntimeSharedState = () => {
+    window.runtimeSharedState = appStore;
+  };
+
+  const seedSimulation = () => {
+    controller.createBusiness("Acme Innovations", 500);
+    controller.seedMarket();
   };
 
   useEffect(() => {
@@ -31,6 +36,12 @@ export function Controller({ children }) {
       .then(() => setRuntimeSharedState())
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    if (controller != null) {
+      seedSimulation();
+    }
+  }, [controller]);
 
   return (
     <>

@@ -7,7 +7,7 @@ import { SellRenderer } from "../renderers/SellRenderer";
 
 export const InventoryDetail = ({ items }) => {
   const gridRef = useRef();
-  const [rowData, setRowData] = useState(items);
+  const rowData = items;
 
   const [columnDefs, setColumnDefs] = useState([
     { field: "id" },

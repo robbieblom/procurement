@@ -1,15 +1,15 @@
-import { mockBusiness2 } from "../mocks/business";
-
-const mockAsString = JSON.stringify(mockBusiness2);
-
 export const getReactViewDefinition = () => {
   return `
         import pyodide
 
         class ReactView:
-            def update(self, message=''):
+            def update(self, message, payload):
                 print('ReactView message: {}'.format(message))
-                pyodide.code.run_js('window.runtimeSharedState.setState({ business: ${mockAsString} });')
+                
+                print(payload)
+                newStateAsString = "{business: " + payload + "}"
+                jsAsString = 'window.runtimeSharedState.setState({});'.format(newStateAsString)
+                pyodide.code.run_js(jsAsString)
     `;
 };
 

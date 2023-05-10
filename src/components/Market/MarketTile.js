@@ -5,6 +5,7 @@ import { MarketHeader } from "./MarketHeader";
 import { MarketSubheader } from "./MarketSubheader";
 
 export const MarketTile = ({ market }) => {
+  // console.log("rb", market);
   return (
     <Tile
       header={<MarketHeader />}

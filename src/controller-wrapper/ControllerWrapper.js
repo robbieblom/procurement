@@ -19,6 +19,12 @@ export class ControllerWrapper {
     `);
   }
 
+  async seedMarket() {
+    await this.pythonEnvironment.runPython(`
+      controller.seedMarket()
+    `);
+  }
+
   async buyCheapest(itemName = undefined) {
     await this.pythonEnvironment.runPython(`
         controller.buyCheapest(itemName=${itemName})

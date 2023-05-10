@@ -1,14 +1,11 @@
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
 import { BusinessTile } from "../components/Business/BusinessTile";
 import { InventoryTile } from "../components/Inventory/InventoryTile";
 import { MarketTile } from "../components/Market/MarketTile";
-// import { useController } from "../context/Controller";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { appStore } from "../stores/AppStore";
 
 export const Home = () => {
-  // controller.createBusiness("Acme Innovations", 500);
-  // const controller = useController();
   const business = appStore((state) => state.business);
 
   return (

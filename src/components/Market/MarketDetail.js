@@ -7,7 +7,7 @@ import { BuyRenderer } from "../renderers/BuyRenderer";
 
 export const MarketDetail = ({ items }) => {
   const gridRef = useRef();
-  const [rowData, setRowData] = useState(items);
+  const rowData = items;
 
   const [columnDefs, setColumnDefs] = useState([
     { field: "id" },
