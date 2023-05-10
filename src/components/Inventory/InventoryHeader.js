@@ -2,8 +2,14 @@ import WarehouseIcon from "@mui/icons-material/Warehouse";
 import { Button, Divider, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
+import { useController } from "../../context/Controller";
 
 export const InventoryHeader = () => {
+  const controller = useController();
+  const liquidate = () => {
+    const netWorth = controller.getNetWorth();
+    console.log("rb", netWorth);
+  };
   return (
     <>
       <Grid2 container spacing={6} alignItems={"center"}>
@@ -17,7 +23,7 @@ export const InventoryHeader = () => {
           </Typography>
         </Grid2>
         <Grid2 xs={1} sx={{ textAlign: "right" }} flexGrow={1}>
-          <Button variant={"outlined"} size="small">
+          <Button variant={"outlined"} size="small" onClick={liquidate}>
             Liquidate
           </Button>
         </Grid2>

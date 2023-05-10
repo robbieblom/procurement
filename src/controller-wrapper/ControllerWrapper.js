@@ -74,7 +74,7 @@ export class ControllerWrapper {
   }
 
   async getNetWorth() {
-    const netWorth = await globalThis.pythonEnvironment.runPython(`
+    const netWorth = await this.pythonEnvironment.runPython(`
         controller.getNetWorth()
     `);
     return netWorth;

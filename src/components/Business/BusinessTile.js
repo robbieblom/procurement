@@ -1,13 +1,13 @@
 import React from "react";
+import { useController } from "../../context/Controller";
 import { Tile } from "../common/Tile";
 import { BusinessDetail } from "./BusinessDetail";
 import { BusinessHeader } from "./BusinessHeader";
 import { BusinessSubheader } from "./BusinessSubheader";
 
 export const BusinessTile = ({ business }) => {
-  // const controller = useController();
-  // const netWorth = controller.getNetWorth();
-  const netWorth = 500;
+  const controller = useController();
+  const netWorth = controller.getNetWorth();
 
   // const margin = controller.calculateMargin();
   const margin = 30;

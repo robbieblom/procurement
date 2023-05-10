@@ -2,6 +2,7 @@ import BusinessIcon from "@mui/icons-material/Business";
 import { Divider, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
+import { formatToCurrency } from "../../utils/utils";
 
 export const BusinessHeader = ({ businessName, netWorth }) => {
   return (
@@ -18,7 +19,7 @@ export const BusinessHeader = ({ businessName, netWorth }) => {
         </Grid2>
 
         <Grid2 xs={1} sx={{ textAlign: "right" }} flexGrow={1}>
-          <Typography variant="h5">${netWorth}</Typography>
+          <Typography variant="h5">{formatToCurrency(netWorth)}</Typography>
           <Typography color={"primary"}>Net Worth</Typography>
         </Grid2>
       </Grid2>

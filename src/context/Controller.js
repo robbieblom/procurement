@@ -18,30 +18,27 @@ export function Controller({ children }) {
   const createController = (pythonEnvironment) => {
     const initializedController = new ControllerWrapper(pythonEnvironment);
     initializedController.setView(view);
-    setController(initializedController);
+    return initializedController;
   };
 
   const setRuntimeSharedState = () => {
     window.runtimeSharedState = appStore;
   };
 
-  const seedSimulation = () => {
-    controller.createBusiness("Acme Innovations", 500);
-    controller.seedMarket();
+  const seedSimulation = async (ctrl) => {
+    await ctrl.createBusiness("Acme Innovations", 500);
+    await ctrl.seedMarket();
+    return ctrl;
   };
 
   useEffect(() => {
+    setRuntimeSharedState();
     createPythonEnvironment()
       .then((env) => createController(env))
-      .then(() => setRuntimeSharedState())
+      .then((ctrl) => seedSimulation(ctrl))
+      .then((ctrl) => setController(ctrl))
       .catch((err) => console.log(err));
   }, []);
-
-  useEffect(() => {
-    if (controller != null) {
-      seedSimulation();
-    }
-  }, [controller]);
 
   return (
     <>
