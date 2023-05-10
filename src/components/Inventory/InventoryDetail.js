@@ -12,7 +12,11 @@ export const InventoryDetail = ({ items }) => {
   const [columnDefs, setColumnDefs] = useState([
     { field: "id" },
     { field: "name" },
-    { field: "value", valueFormatter: currencyFormatter },
+    {
+      field: "metrics.salesPrice",
+      headerName: "Sales Price",
+      valueFormatter: currencyFormatter,
+    },
     {
       field: "id",
       headerName: "",

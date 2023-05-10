@@ -13,7 +13,7 @@ export const BusinessSubheader = ({ moneyAmount, margin }) => {
         </Grid2>
 
         <Grid2 xs={8}>
-          <Typography variant="h6">{formatToCurrency(margin)}</Typography>
+          <Typography variant="h6">{margin ? `${margin} %` : "N/A"}</Typography>
           <Typography color={"primary"}>Margin</Typography>
         </Grid2>
       </Grid2>

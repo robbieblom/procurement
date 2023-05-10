@@ -19,12 +19,14 @@ export const BusinessDetail = ({
         </Grid2>
 
         <Grid2 xs={4}>
-          <Typography variant="h6">${numberSold}</Typography>
+          <Typography variant="h6">{numberSold}</Typography>
           <Typography color={"text.secondary"}>Units Sold</Typography>
         </Grid2>
 
         <Grid2 xs={4}>
-          <Typography variant="h6">${Math.round(avgSalePrice)}</Typography>
+          <Typography variant="h6">
+            {avgSalePrice ? `$${avgSalePrice}` : "N/A"}
+          </Typography>
           <Typography color={"text.secondary"}>Avg. Sale Price</Typography>
         </Grid2>
 
@@ -34,12 +36,14 @@ export const BusinessDetail = ({
         </Grid2>
 
         <Grid2 xs={4}>
-          <Typography variant="h6">${numberPurchased}</Typography>
+          <Typography variant="h6">{numberPurchased}</Typography>
           <Typography color={"text.secondary"}>Units Purchased</Typography>
         </Grid2>
 
         <Grid2 xs={4}>
-          <Typography variant="h6">${Math.round(avgPurchasePrice)}</Typography>
+          <Typography variant="h6">
+            {avgPurchasePrice ? `$${avgPurchasePrice}` : "N/A"}
+          </Typography>
           <Typography color={"text.secondary"}>Avg. Purchase Price</Typography>
         </Grid2>
       </Grid2>

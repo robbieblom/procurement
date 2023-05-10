@@ -1,49 +1,32 @@
 import React from "react";
-import { useController } from "../../context/Controller";
 import { Tile } from "../common/Tile";
 import { BusinessDetail } from "./BusinessDetail";
 import { BusinessHeader } from "./BusinessHeader";
 import { BusinessSubheader } from "./BusinessSubheader";
 
 export const BusinessTile = ({ business }) => {
-  const controller = useController();
-  const netWorth = controller.getNetWorth();
-
-  // const margin = controller.calculateMargin();
-  const margin = 30;
-
-  // const volumeSold = controller.getVolumeSold();
-  const volumeSold = 400;
-
-  // const numberSold = controller.getNumberSold();
-  const numberSold = 5;
-
-  const avgSalePrice = volumeSold / numberSold;
-
-  // const volumePurchased = controller.getVolumePurchased();
-  const volumePurchased = 4;
-
-  // const numberPurchased = controller.getNumberPurchased();
-  const numberPurchased = 7;
-
-  const avgPurchasePrice = volumePurchased / numberPurchased;
-
   return (
     <Tile
       header={
-        <BusinessHeader businessName={business.name} netWorth={netWorth} />
+        <BusinessHeader
+          businessName={business.name}
+          netWorth={business.metrics.netWorth}
+        />
       }
       subheader={
-        <BusinessSubheader moneyAmount={business.moneyAmount} margin={margin} />
+        <BusinessSubheader
+          moneyAmount={business.moneyAmount}
+          margin={business.metrics.margin}
+        />
       }
       detail={
         <BusinessDetail
-          volumeSold={volumeSold}
-          numberSold={numberSold}
-          avgSalePrice={avgSalePrice}
-          volumePurchased={volumePurchased}
-          numberPurchased={numberPurchased}
-          avgPurchasePrice={avgPurchasePrice}
+          volumeSold={business.metrics.volumeSold}
+          numberSold={business.metrics.numberSold}
+          avgSalePrice={business.metrics.avgSalePrice}
+          volumePurchased={business.metrics.volumePurchased}
+          numberPurchased={business.metrics.numberPurchased}
+          avgPurchasePrice={business.metrics.avgPurchasePrice}
         />
       }
     />

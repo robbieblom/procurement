@@ -12,7 +12,11 @@ export const MarketDetail = ({ items }) => {
   const [columnDefs, setColumnDefs] = useState([
     { field: "id" },
     { field: "name" },
-    { field: "value", valueFormatter: currencyFormatter },
+    {
+      field: "metrics.purchasePrice",
+      headerName: "Purchase Price",
+      valueFormatter: currencyFormatter,
+    },
     {
       field: "id",
       headerName: "",

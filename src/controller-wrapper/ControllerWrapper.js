@@ -46,7 +46,7 @@ export class ControllerWrapper {
   async buyAsManyAsPossible(itemName = undefined) {
     if (itemName) {
       await this.pythonEnvironment.runPython(`
-        controller.buyAsManyAsPossible(itemName=${itemName})
+        controller.buyAsManyAsPossible(${itemName})
     `);
     } else {
       await this.pythonEnvironment.runPython(`

@@ -6,9 +6,8 @@ import { useController } from "../../context/Controller";
 
 export const InventoryHeader = () => {
   const controller = useController();
-  const liquidate = () => {
-    const netWorth = controller.getNetWorth();
-    console.log("rb", netWorth);
+  const liquidate = async () => {
+    controller.liquidateInventory();
   };
   return (
     <>

@@ -5,11 +5,11 @@ import { useController } from "../../context/Controller";
 export const MarketSubheader = () => {
   const controller = useController();
 
-  const buyCheapest = () => {
+  const buyCheapest = async () => {
     controller.buyCheapest();
   };
 
-  const buyAsManyAsPossible = () => {
+  const buyAsManyAsPossible = async () => {
     controller.buyAsManyAsPossible();
   };
 
