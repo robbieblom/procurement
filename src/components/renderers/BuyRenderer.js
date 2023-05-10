@@ -1,11 +1,13 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { useController } from "../../context/Controller";
 
 export const BuyRenderer = (props) => {
   const cellValue = props.valueFormatted ? props.valueFormatted : props.value;
+  const controller = useController();
 
   const buy = () => {
-    alert(`bought ${cellValue}`);
+    controller.buyItemById(cellValue);
   };
 
   return (

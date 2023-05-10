@@ -6,7 +6,7 @@ export const getReactViewDefinition = () => {
             def update(self, message, payload):
                 print('ReactView message: {}'.format(message))
                 
-                print(payload)
+                # print(payload)
                 newStateAsString = "{business: " + payload + "}"
                 jsAsString = 'window.runtimeSharedState.setState({});'.format(newStateAsString)
                 pyodide.code.run_js(jsAsString)

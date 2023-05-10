@@ -25,15 +25,39 @@ export class ControllerWrapper {
     `);
   }
 
-  async buyCheapest(itemName = undefined) {
+  async buyItemById(id) {
     await this.pythonEnvironment.runPython(`
-        controller.buyCheapest(itemName=${itemName})
+      controller.buyItemById(${id})
     `);
   }
 
+  async buyCheapest(itemName = undefined) {
+    if (itemName) {
+      await this.pythonEnvironment.runPython(`
+        controller.buyCheapest(itemName=${itemName})
+    `);
+    } else {
+      await this.pythonEnvironment.runPython(`
+        controller.buyCheapest()
+    `);
+    }
+  }
+
   async buyAsManyAsPossible(itemName = undefined) {
-    await this.pythonEnvironment.runPython(`
+    if (itemName) {
+      await this.pythonEnvironment.runPython(`
         controller.buyAsManyAsPossible(itemName=${itemName})
+    `);
+    } else {
+      await this.pythonEnvironment.runPython(`
+        controller.buyAsManyAsPossible()
+    `);
+    }
+  }
+
+  async sellItemById(id) {
+    await this.pythonEnvironment.runPython(`
+      controller.sellItemById(${id})
     `);
   }
 
