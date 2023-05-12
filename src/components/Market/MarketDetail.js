@@ -2,11 +2,13 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-balham.css";
 import { AgGridReact } from "ag-grid-react";
 import React, { useCallback, useMemo, useRef, useState } from "react";
+import { appStore } from "../../stores/AppStore";
 import { currencyFormatter } from "../grid-utils/utils";
 import { BuyRenderer } from "../renderers/BuyRenderer";
 
 export const MarketDetail = ({ items }) => {
   const gridRef = useRef();
+  const gridThemeName = appStore((state) => state.getGridThemeName());
   const rowData = items;
 
   const [columnDefs, setColumnDefs] = useState([
@@ -56,7 +58,7 @@ export const MarketDetail = ({ items }) => {
 
   return (
     <div
-      className="ag-theme-balham-dark"
+      className={gridThemeName}
       style={{ width: "100%", height: "100%", minHeight: "400px" }}
     >
       <AgGridReact
