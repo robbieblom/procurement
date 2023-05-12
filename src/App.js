@@ -1,22 +1,19 @@
-import { CssBaseline } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  ByteTheoryTheme,
+  GlobalLayout,
+} from "@bytetheoryinnovations/bytetheory-ui-library";
 import React from "react";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { Controller } from "./context/Controller";
 import { View } from "./context/View";
 import { Error } from "./pages/Error";
 import { Home } from "./pages/Home";
-import { GlobalLayout } from "./pages/layout/GlobalLayout";
-import { themeOptions } from "./theme/theme-options";
 
 export const App = () => {
-  const theme = createTheme(themeOptions());
-
   return (
     <>
       <ErrorBoundary fallback={<Error />}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+        <ByteTheoryTheme>
           <View>
             <Controller>
               <GlobalLayout>
@@ -24,7 +21,7 @@ export const App = () => {
               </GlobalLayout>
             </Controller>
           </View>
-        </ThemeProvider>
+        </ByteTheoryTheme>
       </ErrorBoundary>
     </>
   );
