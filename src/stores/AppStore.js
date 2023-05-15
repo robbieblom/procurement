@@ -17,6 +17,10 @@ export const appStore = create((set, get) => ({
   setMarketBackdropText: (t) => {
     set({ marketBackdropText: t });
   },
+  liquidateBackdropOpen: false,
+  setLiquidateBackdropOpen: (o) => {
+    set({ liquidateBackdropOpen: o });
+  },
   business: mockBusiness1,
   setBusiness: (b) => {
     set({ business: b });

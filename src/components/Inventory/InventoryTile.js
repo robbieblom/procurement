@@ -6,7 +6,7 @@ import { InventoryHeader } from "./InventoryHeader";
 export const InventoryTile = ({ inventory }) => {
   return (
     <Tile
-      header={<InventoryHeader />}
+      header={<InventoryHeader items={inventory.items} />}
       detail={<InventoryDetail items={inventory.items} />}
     />
   );
