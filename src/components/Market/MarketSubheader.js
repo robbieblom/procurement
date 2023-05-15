@@ -6,13 +6,29 @@ import { appStore } from "../../stores/AppStore";
 export const MarketSubheader = () => {
   const controller = useController();
   const buttonVariant = appStore((state) => state.getButtonVariant());
+  const [setMarketBackdropOpen, setMarketBackdropText] = appStore((state) => [
+    state.setMarketBackdropOpen,
+    state.setMarketBackdropText,
+  ]);
 
   const buyCheapest = async () => {
-    controller.buyCheapest();
+    try {
+      await controller.buyCheapest();
+    } catch (err) {
+      console.log(err);
+      setMarketBackdropOpen(true);
+      setMarketBackdropText("You don't have enough money to buy any items.");
+    }
   };
 
   const buyAsManyAsPossible = async () => {
-    controller.buyAsManyAsPossible();
+    try {
+      await controller.buyAsManyAsPossible();
+    } catch (err) {
+      console.log(err);
+      setMarketBackdropOpen(true);
+      setMarketBackdropText("You don't have enough money to buy any items.");
+    }
   };
 
   return (

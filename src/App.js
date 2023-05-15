@@ -4,6 +4,7 @@ import {
 } from "@bytetheoryinnovations/bytetheory-ui-library";
 import React from "react";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { MarketBackdrop } from "./components/common/MarketBackdrop";
 import { Controller } from "./context/Controller";
 import { View } from "./context/View";
 import { Error } from "./pages/Error";
@@ -12,7 +13,10 @@ import { appStore } from "./stores/AppStore";
 
 export const App = () => {
   const mode = appStore((state) => state.mode);
-
+  const [marketBackdropOpen, marketBackdropText] = appStore((state) => [
+    state.marketBackdropOpen,
+    state.marketBackdropText,
+  ]);
   return (
     <>
       <ErrorBoundary fallback={<Error />}>
@@ -21,6 +25,10 @@ export const App = () => {
             <Controller>
               <GlobalLayout>
                 <Home />
+                <MarketBackdrop
+                  open={marketBackdropOpen}
+                  text={marketBackdropText}
+                />
               </GlobalLayout>
             </Controller>
           </View>

@@ -7,9 +7,19 @@ export const BuyRenderer = (props) => {
   const cellValue = props.valueFormatted ? props.valueFormatted : props.value;
   const controller = useController();
   const buttonVariant = appStore((state) => state.getButtonVariant());
+  const [setMarketBackdropOpen, setMarketBackdropText] = appStore((state) => [
+    state.setMarketBackdropOpen,
+    state.setMarketBackdropText,
+  ]);
 
-  const buy = () => {
-    controller.buyItemById(cellValue);
+  const buy = async () => {
+    try {
+      await controller.buyItemById(cellValue);
+    } catch (err) {
+      console.log(err);
+      setMarketBackdropOpen(true);
+      setMarketBackdropText("You don't have enough money to buy this item.");
+    }
   };
 
   return (
