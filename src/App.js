@@ -1,7 +1,7 @@
 import {
+  ByteTheoryConfig,
   ByteTheoryTheme,
   GlobalLayout,
-  PageLoadAnim,
 } from "@bytetheoryinnovations/bytetheory-ui-library";
 import React from "react";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -26,10 +26,10 @@ export const App = () => {
   return (
     <>
       <ErrorBoundary fallback={<Error />}>
-        <ByteTheoryTheme mode={mode} rebaseStyles>
-          <View>
-            <Controller>
-              <PageLoadAnim>
+        <ByteTheoryConfig providingLibraries={["@mui/material"]}>
+          <ByteTheoryTheme mode={mode} rebaseStyles>
+            <View>
+              <Controller>
                 <GlobalLayout>
                   <Home />
                   <MarketBackdrop
@@ -38,10 +38,10 @@ export const App = () => {
                   />
                   <LiquidateBackdrop open={liquidateBackdropOpen} />
                 </GlobalLayout>
-              </PageLoadAnim>
-            </Controller>
-          </View>
-        </ByteTheoryTheme>
+              </Controller>
+            </View>
+          </ByteTheoryTheme>
+        </ByteTheoryConfig>
       </ErrorBoundary>
     </>
   );
