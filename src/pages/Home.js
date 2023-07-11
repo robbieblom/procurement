@@ -1,4 +1,5 @@
 import Section from "@bytetheoryinnovations/bytetheory-ui-library/react/Section";
+import { useTheme } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
 import { BusinessTile } from "../components/Business/BusinessTile";
@@ -7,11 +8,14 @@ import { MarketTile } from "../components/Market/MarketTile";
 import { appStore } from "../stores/AppStore";
 
 export const Home = () => {
+  const theme = useTheme();
   const business = appStore((state) => state.business);
 
   return (
     <>
-      <Section isHero={true} style={{ paddingTop: "0px" }}>
+      <Section
+        style={{ paddingTop: theme.custom.navBarHeight, height: "100%" }}
+      >
         <Grid2
           container
           sx={{ marginTop: "10px", height: "100%" }}
@@ -21,8 +25,8 @@ export const Home = () => {
         >
           <Grid2
             container
-            xs={12}
-            md={6}
+            smallMobile={12}
+            smallDesktop={6}
             direction={"column"}
             wrap="nowrap"
             spacing={2}
@@ -35,7 +39,7 @@ export const Home = () => {
             </Grid2>
           </Grid2>
 
-          <Grid2 xs={12} md={6}>
+          <Grid2 smallMobile={12} smallDesktop={6}>
             <MarketTile market={business.market} />
           </Grid2>
         </Grid2>

@@ -29,7 +29,7 @@ export const InventoryHeader = ({ items }) => {
 
   return (
     <>
-      <Grid2 container spacing={6} alignItems={"center"}>
+      <Grid2 container spacing={2} alignItems={"center"}>
         <Grid2 xs={1}>
           <WarehouseIcon color="primary" sx={{ fontSize: 35 }} />
         </Grid2>

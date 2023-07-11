@@ -1,8 +1,11 @@
 import {
   ByteTheoryConfig,
   ByteTheoryTheme,
+  Footer,
   GlobalLayout,
+  NavModule,
 } from "@bytetheoryinnovations/bytetheory-ui-library";
+import { MenuIcon } from "@bytetheoryinnovations/bytetheory-ui-library/react/NavModule";
 import React from "react";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { LiquidateBackdrop } from "./components/common/LiquidateBackdrop";
@@ -23,6 +26,57 @@ export const App = () => {
     (state) => state.liquidateBackdropOpen
   );
 
+  const navDrawerMenuItems = [
+    {
+      name: "Home",
+      url: "https://bytetheoryinnovations.com/#home",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+    {
+      name: "About",
+      url: "https://bytetheoryinnovations.com/#services",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+    {
+      name: "Projects",
+      url: "https://bytetheoryinnovations.com/#projects",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+    {
+      name: "Contact",
+      url: "https://bytetheoryinnovations.com/#contact",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+  ];
+  const logoUrl = {
+    name: "Logo",
+    url: "https://bytetheoryinnovations.com/#home",
+    options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+  };
+
+  const footerMenuItems = [
+    {
+      name: "Home",
+      url: "https://bytetheoryinnovations.com/#home",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+    {
+      name: "About",
+      url: "https://bytetheoryinnovations.com/#services",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+    {
+      name: "Projects",
+      url: "https://bytetheoryinnovations.com/#projects",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+    {
+      name: "Contact",
+      url: "https://bytetheoryinnovations.com/#contact",
+      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
+    },
+  ];
+
   return (
     <>
       <ErrorBoundary fallback={<Error />}>
@@ -30,7 +84,17 @@ export const App = () => {
           <ByteTheoryTheme mode={mode} rebaseStyles>
             <View>
               <Controller>
-                <GlobalLayout>
+                <GlobalLayout
+                  nav={
+                    <NavModule
+                      icons={[
+                        <MenuIcon key={1} menuItems={navDrawerMenuItems} />,
+                      ]}
+                      logoUrl={logoUrl}
+                    />
+                  }
+                  footer={<Footer footerMenuItems={footerMenuItems} />}
+                >
                   <Home />
                   <MarketBackdrop
                     open={marketBackdropOpen}

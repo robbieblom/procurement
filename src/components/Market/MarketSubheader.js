@@ -1,4 +1,5 @@
-import { Button, Stack } from "@mui/material";
+import { useMUIMediaQuery } from "@bytetheoryinnovations/bytetheory-ui-library/react/hooks";
+import { Box, Button, Stack } from "@mui/material";
 import React from "react";
 import { useController } from "../../context/Controller";
 import { appStore } from "../../stores/AppStore";
@@ -10,6 +11,8 @@ export const MarketSubheader = () => {
     state.setMarketBackdropOpen,
     state.setMarketBackdropText,
   ]);
+
+  const { isSmallTablet } = useMUIMediaQuery();
 
   const buyCheapest = async () => {
     try {
@@ -33,17 +36,28 @@ export const MarketSubheader = () => {
 
   return (
     <>
-      <Stack direction={"row"} spacing={2}>
-        <Button variant={buttonVariant} size="small" onClick={buyCheapest}>
-          Buy Cheapest
-        </Button>
-        <Button
-          variant={buttonVariant}
-          size="small"
-          onClick={buyAsManyAsPossible}
-        >
-          Buy As Many As Possible
-        </Button>
+      <Stack direction={isSmallTablet ? "row" : "column"} spacing={2}>
+        <Box>
+          <Button
+            variant={buttonVariant}
+            size="small"
+            onClick={buyCheapest}
+            sx={{ whiteSpace: "nowrap", minWidth: "max-content" }}
+          >
+            Buy Cheapest
+          </Button>
+        </Box>
+
+        <Box>
+          <Button
+            variant={buttonVariant}
+            size="small"
+            onClick={buyAsManyAsPossible}
+            sx={{ whiteSpace: "nowrap", minWidth: "max-content" }}
+          >
+            Buy As Many As Possible
+          </Button>
+        </Box>
       </Stack>
     </>
   );

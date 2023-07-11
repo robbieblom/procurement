@@ -7,9 +7,9 @@ import { formatToCurrency } from "../../utils/utils";
 export const BusinessHeader = ({ businessName, netWorth }) => {
   return (
     <>
-      <Grid2 container spacing={6} alignItems={"center"}>
+      <Grid2 container spacing={1} alignItems={"center"}>
         <Grid2 xs={1}>
-          <BusinessIcon color="primary" sx={{ fontSize: 40 }} />
+          <BusinessIcon color="primary" sx={{ fontSize: 39 }} />
         </Grid2>
 
         <Grid2>
