@@ -39,7 +39,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
-    "@bytetheoryinnovations/bytetheory-ui-library": "^6.3.14",
+    "@bytetheoryinnovations/bytetheory-ui-library": "^6.5.5",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@mui/icons-material": "^5.11.16",

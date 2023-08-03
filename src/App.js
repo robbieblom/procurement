@@ -5,9 +5,10 @@ import {
   GlobalLayout,
   NavModule,
 } from "@bytetheoryinnovations/bytetheory-ui-library";
-import { MenuIcon } from "@bytetheoryinnovations/bytetheory-ui-library/react/NavModule";
+import { Logo } from "@bytetheoryinnovations/bytetheory-ui-library/assets";
 import React from "react";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import DocsButton from "./components/common/DocsButton";
 import { LiquidateBackdrop } from "./components/common/LiquidateBackdrop";
 import { MarketBackdrop } from "./components/common/MarketBackdrop";
 import { Controller } from "./context/Controller";
@@ -26,35 +27,13 @@ export const App = () => {
     (state) => state.liquidateBackdropOpen
   );
 
-  const navDrawerMenuItems = [
-    {
-      name: "Home",
-      url: "https://bytetheoryinnovations.com/#home",
-      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
-    },
-    {
-      name: "About",
-      url: "https://bytetheoryinnovations.com/#services",
-      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
-    },
-    {
-      name: "Projects",
-      url: "https://bytetheoryinnovations.com/#projects",
-      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
-    },
-    {
-      name: "Contact",
-      url: "https://bytetheoryinnovations.com/#contact",
-      options: { target: "_blank", rel: "noopener nofollow noreferrer" },
-    },
-  ];
-  const logoUrl = {
+  const navLogoUrl = {
     name: "Logo",
     url: "https://bytetheoryinnovations.com/#home",
     options: { target: "_blank", rel: "noopener nofollow noreferrer" },
   };
 
-  const footerMenuItems = [
+  const linksMenuItems = [
     {
       name: "Home",
       url: "https://bytetheoryinnovations.com/#home",
@@ -87,13 +66,11 @@ export const App = () => {
                 <GlobalLayout
                   nav={
                     <NavModule
-                      icons={[
-                        <MenuIcon key={1} menuItems={navDrawerMenuItems} />,
-                      ]}
-                      logoUrl={logoUrl}
+                      leftIcons={[<DocsButton key={1} themeMode={"light"} />]}
+                      rightIcons={[<Logo key={1} logoUrl={navLogoUrl} />]}
                     />
                   }
-                  footer={<Footer footerMenuItems={footerMenuItems} />}
+                  footer={<Footer linksMenuItems={linksMenuItems} />}
                 >
                   <Home />
                   <MarketBackdrop
